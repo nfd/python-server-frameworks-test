@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  server:
+    build:
+      context: .
+    volumes:
+      - .:/app
+    working_dir: "/app"
+    command: "/bin/sleep 7d"
+    ports:
+      - 8000:8000
+
+  client:
+    build:
+      context: .
+    working_dir: "/app"
+    volumes:
+      - .:/app
+    command: "/bin/sleep 7d"
